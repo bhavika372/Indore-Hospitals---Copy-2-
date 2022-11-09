@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration - IHBA</title>
+
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\static\CSS\style.css">
+    <link rel="shortcut icon" href="..\static\img\favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1367876d04.js" crossorigin="anonymous"></script>
+    <script src="jquery.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+         :root {
+            --header-height: 3rem;
+            --nav-width: 68px;
+            --first-color: #4723D9;
+            --first-color-light: #AFA5D9;
+            --white-color: #F7F6FB;
+            --body-font: 'Nunito', sans-serif;
+            --normal-font-size: 1rem;
+            --z-fixed: 100
+        }
+        
+        *,
+         ::before,
+         ::after {
+            box-sizing: border-box
+        }
+        
+        body {
+            position: relative;
+            margin: var(--header-height) 0 0 0;
+            padding: 0 1rem;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            transition: .5s
+        }
+        
+        a {
+            text-decoration: none
+        }
+        
+        .header {
+            width: 100%;
+            height: var(--header-height);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            background-color: var(--white-color);
+            z-index: var(--z-fixed);
+            transition: .5s
+        }
+        
+        .header_toggle {
+            color: var(--first-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+        .header_img {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden
+        }
+        
+        .header_img img {
+            width: 40px
+        }
+        
+        .l-navbar {
+            position: fixed;
+            top: 0;
+            left: -30%;
+            width: var(--nav-width);
+            height: 100vh;
+            background-color: linear-gradient(15deg, #5271ff, #3b168c);
+            ;
+            padding: .5rem 1rem 0 0;
+            transition: .5s;
+            z-index: var(--z-fixed)
+        }
+        
+        .nav {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        
+        .nav_logo,
+        .nav_link {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            align-items: center;
+            column-gap: 1rem;
+            padding: .5rem 0 .5rem 1.5rem
+        }
+        
+        .nav_logo {
+            margin-bottom: 2rem;
+        }
+        
+        .nav_logo-icon {
+            font-size: 1.25rem;
+            color: var(--white-color)
+        }
+        
+        .nav_logo-name {
+            color: var(--white-color);
+            font-weight: 700
+        }
+        
+        .nav_link {
+            position: relative;
+            color: var(--first-color-light);
+            margin-bottom: 1.5rem;
+            transition: .3s
+        }
+        
+        .nav_link:hover {
+            color: var(--white-color)
+        }
+        
+        .nav_icon {
+            font-size: 1.25rem
+        }
+        
+        .show {
+            left: 0
+        }
+        
+        .body-pd {
+            padding-left: calc(var(--nav-width) + 1rem)
+        }
+        
+        .active {
+            color: var(--white-color)
+        }
+        
+        .active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 2px;
+            height: 32px;
+            background-color: var(--white-color)
+        }
+        
+        .height-100 {
+            height: 100vh
+        }
+        
+        @media screen and (min-width: 768px) {
+            body {
+                margin: calc(var(--header-height) + 1rem) 0 0 0;
+                padding-left: calc(var(--nav-width) + 2rem);
+            }
+            .header {
+                height: calc(var(--header-height) + 1rem);
+                padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+            }
+            .header_img {
+                width: 40px;
+                height: 40px
+            }
+            .header_img img {
+                width: 45px
+            }
+            .l-navbar {
+                left: 0;
+                padding: 1rem 1rem 0 0;
+                background-color: #3b168c;
+                ;
+            }
+            .show {
+                width: calc(var(--nav-width) + 156px)
+            }
+            .body-pd {
+                padding-left: calc(var(--nav-width) + 188px)
+            }
+        }
+        
+        .error {
+            font-size: 10px;
+            font-weight: bold;
+            margin-left: 35%;
+        }
+        
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .footer-section {
+            margin-top: 210%;
+            padding-right: 5%;
+            padding-left: 5%;
+            background: linear-gradient(135deg, #3b168c, #5271ff);
+            position: absolute;
+        }
+        
+        .footer-cta {
+            border-bottom: 1px solid #47B5FF;
+        }
+        
+        .single-cta i {
+            color: #FEB139;
+            font-size: 30px;
+            float: left;
+            margin-top: 8px;
+        }
+        
+        .cta-text {
+            padding-left: 15px;
+            display: inline-block;
+        }
+        
+        .cta-text h4 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .cta-text span {
+            color: #EFFFFD;
+            font-size: 15px;
+        }
+        
+        .fl {
+            font-weight: 600;
+            margin-right: 25px;
+            color: #292929;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btnAction {
+            padding: 5px 45px 5px 45px;
+            background: linear-gradient(135deg, #3b168c, #2155CD);
+            border: 0;
+            color: #FFF;
+            cursor: pointer;
+            margin-top: 15px;
+            width: max-content;
+            border-radius: 8px;
+            margin-bottom: 5%;
+            font-weight: 700;
+        }
+        
+        .progress-container {
+            width: 93.8%;
+            margin-left: -0.8%;
+            height: 5px;
+            margin-top: 4%;
+            position: fixed;
+            top: 5px;
+        }
+        
+        .progress-bar {
+            width: 93.8%;
+            height: 5px;
+            background: #7983ff;
+            width: 0%;
+        }
+        
+        .content {
+            padding: 100px 0;
+            margin: 50px auto 0 auto;
+            width: 80%;
+        }
+    </style>
+</head>
+
+
+<body id="body-pd">
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        function myFunction() {
+
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+            const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                const toggle = document.getElementById(toggleId),
+                    nav = document.getElementById(navId),
+                    bodypd = document.getElementById(bodyId),
+                    headerpd = document.getElementById(headerId)
+
+                // Validate that all variables exist
+                if (toggle && nav && bodypd && headerpd) {
+                    toggle.addEventListener('click', () => {
+                        // show navbar
+                        nav.classList.toggle('show')
+                            // change icon
+                        toggle.classList.toggle('bx-x')
+                            // add padding to body
+                        bodypd.classList.toggle('body-pd')
+                            // add padding to header
+                        headerpd.classList.toggle('body-pd')
+                    })
+                }
+            }
+
+            showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
+            /*===== LINK ACTIVE =====*/
+            const linkColor = document.querySelectorAll('.nav_link')
+
+            function colorLink() {
+                if (linkColor) {
+                    linkColor.forEach(l => l.classList.remove('active'))
+                    this.classList.add('active')
+                }
+            }
+            linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+            // Your code to run since DOM is loaded and ready
+        });
+
+        var inputText = document.getElementById("inputText"),
+            btnAdd = document.getElementById("btnAdd");
+
+
+
+        inputText.addEventListener("keyup", function() {
+
+            if (this.value.trim().length > 0) {
+                btnAdd.removeAttribute("disabled");
+            } else {
+                btnAdd.setAttribute("disabled", true);
+            }
+        });
+
+        var ul = document.createElement("ul");
+        btnAdd.addEventListener("click", function() {
+            var li = document.createElement("li");
+            li.className = "lst";
+            li.innerHTML = inputText.value + '<span onclick="removeMe(this)"> - remove</span>';
+            ul.appendChild(li);
+            inputText.value = '';
+            inputText.focus();
+            btnAdd.setAttribute("disabled", true);
+        });
+
+        function removeMe(item) {
+            var parent = item.parentElement;
+            parent.parentElement.removeChild(parent);
+        }
+        document.body.appendChild(ul);
+    </script>
+    <div class="form-row">
+        <div class="form-flex">
+            <header class="header " id="header" style='margin-top:2px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:94%;margin-left:5%'>
+                <div class="col-lg-5"></div>
+                <div class="img col-lg-6">
+                    <img style="width:7% ; padding:5px" src="../static/img/logo.png">
+
+                    <a href="#" style=" text-decoration:none;font-size:20px;color:black; font-weight:700;  font-family: 'Rubik';
+                    "><span style="color:#0071bc">I</span><span style="color:#2e3192">HBA</span></a>
+                </div>
+                <div class="col-lg-1"></div>
+            </header>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="#" class="nav_logo"><img class="bx bx-layer nav_logo-icon" src="..\static\img\white_logo.png" style="width:25px" id="header-toggle" alt=""><span class="nav_logo-name">IHBA REGISTER</span> </a>
+                <div class="nav_list">
+                    <a href="#information" class="nav_link active"><i class="fa-solid fa-circle-info"></i><span class="nav_name">Information</span> </a>
+                    <a href="#nodal" class="nav_link "><i class="fa-solid fa-user-nurse"></i><span class="nav_name">Add Nodal</span> </a>
+                    <a href="#bed_info" class="nav_link"><i class="fa-sharp fa-solid fa-bed"></i><span class="nav_name">Beds Information</span> </a>
+                    <a href="#faci" class="nav_link"> <i class="fa-solid fa-house-medical"></i><span class="nav_name">Facilities</span> </a>
+                    <a href="#mis_faci" class="nav_link"> <i class="fa-solid fa-hospital-user"></i><span class="nav_name">Mis Facilities</span> </a>
+
+                    <a href="#login_ess" class="nav_link"> <i class="fa-solid fa-right-to-bracket"></i><span class="nav_name">Login Essentials</span> </a>
+                </div>
+                <hr style="color:white;border:1px solid white"> <a href="Client.html" class="nav_link"><i class="fa-regular fa-circle-left"></i><span class="nav_name">Back to Home</span> </a>
+        </nav>
+        </div>
+
+
+        <!--Container Main start-->
+        <div class="height-100" style="margin-top:5px; padding-top:15px">
+
+            <!-- Information-->
+            <form class="" action="/registration" method="post">
+                <section id="information">
+                    <div class="container shadow-lg p-3 mb-5 bg-body rounded ">
+                        <h3 class="text-center" class="sub-container-title">INFORMATION</h3>
+                        <hr>
+                        <div>
+                            <div class="side_margin">
+                                <div class="form-row info_cot" style="margin-top:2%">
+                                    <div class="form-flex">
+                                        <div class="col-md-2 form-group" style="width:150px">
+                                            <label for="hospital_name" name="hospital_name" class="col-form-label fl" style="width:100%">Hospital Name </label>
+                                        </div>
+                                        <div class="form-group col-md-2" style="width:150px">
+                                            <select class="form-select" aria-label="Default select example" name="hospital_type" id="type_of_hospital" style="width:120px">
+                        <option selected disabled>Type</option>
+                        <option>Govt</option>
+                        <option>Private</option>
+                    </select>
+                                        </div>
+                                        <div class="form-group col-md-2" style="width:240px">
+                                            <select class="form-select" aria-label="Default select example" name="hospital_type" id="type_of_provider" style="width:90%">
+                        <option selected disabled>Provider Type</option>
+                        <option value="">Hospital</option>
+                        <option value="">Medical College/Institute</option>
+                        <option value="">Dispensary</option>
+                        <option value="">Sub Centre</option>
+                        <option value="">Poly Clinic</option>
+                        <option value="">Clinic</option>
+                        <option value="">Nursing Home</option>
+                        <option value="">Primary Health Centre</option>
+                        <option value="">Community Health Centre</option>
+                    </select>
+                                        </div>
+                                        <div class="form-group col-md-2 info_cot">
+                                            <input type="text" class="form-control" style="width:80%" id="hospital_name" name="hospital_name" placeholder="Enter Hospital Name" data-toggle="tooltip" data-placement="bottom" title="Name of Health Care Provider">
+                                            <span id="name_error" class="error" style="margin-left: -1%"> </span>
+
+                                        </div>
+
+                                        <div class="col-lg-4"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <!--Description of Hospital-->
+                                <div class="form-row">
+                                    <div class="form-flex">
+                                        <div class="col-lg-7 info_cot"><label for="desc" class="form-label fl">Description</label>
+                                            <textarea class="form-control" id="hospital_desc" name="hospital_desc" value="hospital_desc" rows="2" maxlength="400" style="width:80%" placeholder="Enter Description" data-toggle="tooltip" data-placement="bottom" title="Description"></textarea>
+                                            <span id="desc_error" class="error" style="margin-left: -1%"> </span>
+
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <label for="hospital_registration_number" class="col-md-6 col-form-label fl">Hospital Registration Number</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="hospital_registration_number" name="hospital_registration_number" placeholder="Registration Number" style="width:80%" data-toggle="tooltip" data-placement="bottom" title="Registration Number">
+                                                <span id="reg_error" class="error" style="margin-left: -1%"> </span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <!--Contact-->
+                                <br>
+                                <div class="form-row side_margin">
+                                    <div class="form-flex">
+                                        <!--Primary email ID-->
+                                        <div class="col-lg-4 ">
+                                            <label for="contact" class="form-label fl">Contact </label>
+                                            <div class="col-sm-10"><input type="text" class="form-control" name="hospital_contact" id="hospital_contact" placeholder="Contact Number" data-toggle="tooltip" data-placement="bottom" title="Contact Details"></div>
+                                            <span id="con_error" class="error" style="margin-left: -1%"> </span>
+                                        </div>
+
+                                        <div class="col-lg-4 ">
+                                            <label for="primary_email" class="form-label fl">Primary Email ID</label>
+                                            <input type="email" class="form-control" name="primary_email" id="primary_email" placeholder="primary@email" style="width:80%" data-toggle="tooltip" data-placement="bottom" title="primary">
+                                            <span id="primary-error" class="error" style="margin-left: -1%"> </span>
+
+                                        </div>
+                                        <!--Secondary email ID-->
+                                        <div class="col-lg-4">
+                                            <label for="secondary_email" class="form-label fl">Secondary Email ID</label>
+                                            <input type="email" class="form-control" id="secondary_email_id" name="secondary_email_id" placeholder="secondary@email" style="width:80%" data-toggle="tooltip" data-placement="bottom" title="secondary email">
+                                            <span id="secondary-error" class="error" style="margin-left: -1%"> </span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <hr style="width:100%;color:grey"><br>
+                                <!--Address-->
+
+                                <div class="form-row info_cot">
+                                    <div class="form-flex">
+                                        <div class="col-lg-4">
+                                            <label for="Hospital_Address" class="form-label fl">Hospital Address :</label>
+                                            <input type="text" class="form-control" id="address" name="hospital_address" placeholder="Enter Address" style="width:90%" data-toggle="tooltip" data-placement="bottom" title="Address*">
+                                            <span id="address_error" class="error" style="margin-left: -1%"> </span>
+
+                                        </div>
+                                        <div class="col-lg-3" style="width:30%">
+                                            <label for="Pincode" class="form-label fl">Pincode</label>
+                                            <input class="form-control" id="pincode" name="hospital_pincode" placeholder="Pincode" style="width:80%" data-toggle="tooltip" data-placement="bottom" title="Pincode*">
+                                            <span id="pincode_error" class="error" style="margin-left: -1%"> </span>
+
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <label for="Hospital_State" class="form-label fl">State </label>
+                                            <input type="text" class="form-control" id="state" name="hospital_state" placeholder="Enter State" style="width:80%" data-toggle="tooltip" data-placement="bottom" title="State*">
+                                            <span id="state_error" class="error" style="margin-left: -1%"> </span>
+
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <label for="Hospital_City" class="form-label fl"> City </label>
+
+                                            <input type="text" class="form-control" id="city" name="hospital_city" placeholder="Enter City" style="width:80%" data-toggle="tooltip" data-placement="bottom" title="City*">
+                                            <span id="city_error" class="error" style="margin-left: -1%"> </span>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <!--Pincode-->
+
+
+                                <!--Hospital Registration Number-->
+
+
+                            </div>
+                            <br><br><br>
+                        </div>
+                </section>
+
+                <!-- Nodal Person Info Starts Here -->
+
+                <section id="nodal">
+                    <div class="container shadow-lg p-3 mb-5 bg-body rounded pub_cont">
+                        <h3 class="text-center" class="sub-container-title">NODAL INFORMATION</h3>
+                        <hr><br>
+                        <div class="side_margin">
+                            <div class="form-row info_cot">
+                                <div class="form-flex">
+                                    <!-- Name and Designation of Nodal Person -->
+                                    <label for="nodal_person_name_and_designation" class="col-md-2 form-group col-form-label fl" style="width:350px; padding-top:20px">Nodal Person Name and Designation :</label>
+                                    <div class="col-md-5" style="margin-top:15px">
+                                        <input type="text" class="form-control" id="nodal_name" name="nodal_person_name_and_designation" placeholder="Enter Name of Nodal Person" data-toggle="tooltip" data-placement="bottom" title="Nodal Name ">
+                                        <span id="nodal_name_error" class="error" style="margin-left: -1%"> </span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-row info_cot">
+                                <div class="form-flex">
+                                    <div class="col-lg-4 form-group" style="width:40%">
+                                        <!--Telephone Number of the Nodal Person for this Information-->
+                                        <label for="nodal_person_telephone_number" class="col-md-10 col-form-label fl">Telephone Number of the Nodal Person </label>
+                                        <input type="text" class="form-control" id="nodal_contact" style="width:80%" name="nodal_person_telephone_number" placeholder="Nodal Telephone Number" data-toggle="tooltip" data-placement="bottom" title="Nodal Number">
+                                        <span id="nodal_con_error" class="error" style="margin-left: -1%"> </span>
+
+                                    </div>
+                                    <div class="col-lg-4 form-group" style="width:39%">
+                                        <label for=" nodal_person_email_id" class="col-md-6 col-form-label fl">Nodal Person Email ID</label>
+                                        <div class="col-sm-10">
+                                            <!-- Email ID of Nodal Person -->
+                                            <input type="email" class="form-control" id="nodal_email" name="nodal_person_email_id" placeholder="nodal@email.id" data-toggle="tooltip" data-placement="bottom" title="Nodal Email">
+                                            <span id="nodal_email_error" class="error" style="margin-left: -1%"> </span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                    </div>
+                </section>
+
+                <!-- Nodal Person Info Ends Here -->
+
+                <!-- BEDS INFORMATION STARTS HERE -->
+
+                <section id="bed_info">
+                    <div class="container shadow-lg p-3 bg-body rounded">
+                        <h3 class="text-center" class="sub-container-title" style="margin-bottom:10px">BEDS INFORMATION</h3>
+                        <hr>
+                        <div class="side_margin1">
+                            <!-- GENERAL BEDS -->
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <label for="general_beds" class="col-form-label form-group fl" style="width:225px"> General Beds</label>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- TOTAL GENERAL BEDS -->
+                                        <input type="number" class="form-control" id="total_general_beds" name="total_general_beds" placeholder="Total Beds" data-toggle="tooltip" data-placement="bottom" title="Total General">
+                                    </div>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- AVAILABLE GENERAL BEDS -->
+                                        <input type="number" class="form-control" id="available_general_beds" name="available_general_beds" placeholder="Available Beds" data-toggle="tooltip" data-placement="bottom" title="Available General">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- OXYGEN BEDS -->
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <label for="oxygen_beds" class="col-form-label form-group fl" style="width:225px"> Oxygen Beds</label>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- TOTAL OXYGEN BEDS -->
+                                        <input type="number" class="form-control" id="total_oxygen_beds" name="total_oxygen_beds" value="total_oxygen_beds" placeholder="Total Oxygen Beds" data-toggle="tooltip" data-placement="bottom" title="Total Oxygen">
+                                    </div>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- AVAILABLE OXYGEN BEDS -->
+                                        <input type="number" class="form-control" id="available_oxygen_beds" name="available_oxygen_beds" value="available_oxygen_beds" placeholder="Available Oxygen Beds" data-toggle="tooltip" data-placement="bottom" title="Available Oxygen">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- ICU BEDS -->
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <label for="icu_beds" class="col-form-label fl form-group" style="width:225px"> ICU Beds</label>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- TOTAL ICU BEDS -->
+                                        <input type="number" class="form-control" id="total_icu_beds " name="total_icu_beds" placeholder="Total ICUs" data-toggle="tooltip" data-placement="bottom" title="Total ICU">
+                                    </div>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- AVAILABLE ICU BEDS -->
+                                        <input type="number" class="form-control" id="available_icu_beds" name="available_icu_beds" value="available_icu_beds" placeholder="Available ICUs" data-toggle="tooltip" data-placement="bottom" title="Available ICU">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- ICU BEDS WITH VENTILATOR -->
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <label for="icu_beds_ith_ventilator" class="col-form-label fl form-group" style="width:225px"> ICU Beds with Ventilator </label>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- TOTAL ICU BEDS WITH VENTILATOR -->
+                                        <input type="number" class="form-control" id="total_icu_beds_with_ventilator" name="total_icu_beds_with_ventilator" value="total_icu_beds_with_ventilator" placeholder="Total Venti Beds" data-toggle="tooltip" data-placement="bottom" title="Total Ventilator">
+                                    </div>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- AVAILABLE ICU BEDS WITH VENTILATOR -->
+                                        <input type="number" class="form-control" id="available_icu_beds_with_ventilator" name="available_icu_beds_with_ventilator" value="available_icu_beds_with_ventilator" placeholder="Available Venti Beds" data-toggle="tooltip" data-placement="bottom" title="Available Ventilator">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- EWS BEDS -->
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <label for="ews_beds" class="col-form-label fl form-group" style="width:225px"> Beds for EWS</label>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- TOTAL EWS BEDS -->
+                                        <input type="number" class="form-control" id="total_ews_beds" name="total_ews_beds" value="total_ews_beds" placeholder="Total EWS Beds" data-toggle="tooltip" data-placement="bottom" title="Total EWS">
+                                    </div>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- AVAILABLE EWS BEDS -->
+                                        <input type="number" class="form-control" id="available_ews_beds" name="available_ews_beds" value="available_ews_beds" placeholder="Available EWS Beds" data-toggle="tooltip" data-placement="bottom" title="Available EWS">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- PRIVATE WARDS -->
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <label for="private_wards" class="col-form-label form-group fl" style="width:225px">Private Wards</label>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- TOTAL PRIVATE WARDS -->
+                                        <input type="number" class="form-control" id="total_private_wards" name="total_private_wards" value="total_private_wards" data-toggle="tooltip" data-placement="bottom" title="Total Ward" placeholder="Total Wards">
+                                    </div>
+                                    <div class="col-md-1" style="width:100px"></div>
+                                    <div class="col-md-2">
+                                        <!-- AVAILABLE PRIVATE WARDS -->
+                                        <input type="number" class="form-control" id="available_private_wards" name="available_private_wards" value="available_private_wards" data-toggle="tooltip" data-placement="bottom" title="Available Ward" placeholder="Available Wards">
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BEDS INFORMATION ENDS HERE -->
+
+                <!-- FACILITIES SECTION STARTS HERE -->
+
+                <section id="faci">
+                    <div class="container shadow-lg p-3 mb-5 bg-body rounded w">
+                        <h3 class="text-center" class="sub-container-title"> FACILITIES</h3>
+                        <hr>
+                        <br>
+
+                        <div class="form-row">
+                            <div class="form-flex">
+
+                                <div class="form-row  Facilities_side col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">ICU</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="ICU" id="ICU_a" value="ICU">
+                                            <label class="form-check-label" for="ICU_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="ICU" id="ICU_u" value="no">
+                                            <label class="form-check-label" for="ICU_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="ICU" id="ICU" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-row  col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">IPD</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="IPD" id="IPD_a" value="IPD">
+                                            <label class="form-check-label" for="IPD_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="IPD" id="IPD_u" value="no">
+                                            <label class="form-check-label" for="IPD_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="IPD" id="IPD" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-row  col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">OPD</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="OPD" id="OPD_a" value="OPD">
+                                            <label class="form-check-label" for="OPD_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="OPD" id="OPD_u" value="no">
+                                            <label class="form-check-label" for="OPD_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="OPD" id="OPD" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <br>
+
+
+
+                        <div class="form-row">
+                            <div class="form-flex">
+
+                                <div class="form-row Facilities_side col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">Laboratory</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="Laboratory" id="Laboratory_a" value="Laboratory">
+                                            <label class="form-check-label" for="Laboratory_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="Laboratory" id="Laboratory_u" value="no">
+                                            <label class="form-check-label" for="Laboratory_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Laboratory" id="Laboratory" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-row  col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">Pharmacy</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="Pharmacy" id="Pharmacy_a" value="Pharmacy">
+                                            <label class="form-check-label" for="Pharmacy_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="Pharmacy" id="Pharmacy_u" value="no">
+                                            <label class="form-check-label" for="Pharmacy_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Pharmacy" id="Pharmacy" value="">
+                                    </div>
+                                </div>
+                                <div class="form-row  col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">Labour Room</label>
+                                        <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="Labour_Room" id="Labour_Room_a" value="Labour_Room">
+                                            <label class="form-check-label" for="Labour_Room_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="Labour_Room" id="Labour_Room_u" value="no">
+                                            <label class="form-check-label" for="Labour_Room_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Labour_Room" id="Labour_Room" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-flex">
+                                <div class="form-row Facilities_side col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">Blood Storage</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="Blood_Storage" id="Blood_Storage_a" value="Blood_Storage">
+                                            <label class="form-check-label" for="Blood_Storage_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="Blood_Storage" id="Blood_Storage_u" value="no">
+                                            <label class="form-check-label" for="Blood_Storage_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Blood_Storage" id="Blood_Storage" value="">
+                                    </div>
+                                </div>
+                                <div class="form-row  col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">Blood Bank</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="Blood_Bank" id="Blood_Bank_a" value="Blood_Bank">
+                                            <label class="form-check-label" for="Blood_Bank_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline col-lg-4">
+                                            <input class="form-check-input" type="radio" name="Blood_Bank" id="Blood_Bank_u" value="no">
+                                            <label class="form-check-label" for="Blood_Bank_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Blood_Bank" id="Blood_Bank" value="">
+                                    </div>
+                                </div>
+                                <div class="form-row col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">Organ Bank</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="Organ_Bank" id="Organ_Bank_a" value="Organ_Bank">
+                                            <label class="form-check-label" for="Organ_Bank_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+
+                                            <input class="form-check-input" type="radio" name="Organ_Bank" id="Organ_Bank_u" value="no">
+                                            <label class="form-check-label" for="Organ_Bank_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Organ_Bank" id="Organ_Bank" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="form-row">
+                            <div class="form-flex">
+
+                                <div class="form-row Facilities_side col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">Physiotherapy</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="Physiotherapy" id="Physiotherapy_a" value="Physiotherapy">
+                                            <label class="form-check-label" for="Physiotherapy_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+
+                                            <input class="form-check-input" type="radio" name="Physiotherapy" id="Physiotherapy_u" value="no">
+                                            <label class="form-check-label" for="Physiotherapy_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Physiotherapy" id="Physiotherapy" value="">
+                                    </div>
+                                </div>
+                                <div class="form-row col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">MRI</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="MRI" id="MRI_a" value="MRI">
+                                            <label class="form-check-label" for="MRI_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="MRI" id="MRI_u" value="no">
+                                            <label class="form-check-label" for="MRI_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="MRI" id="MRI" value="">
+                                    </div>
+                                </div>
+                                <div class="form-row col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">CT Scan</label>
+                                        <div class="form-check form-check-inline">
+
+                                            <input class="form-check-input" type="radio" name="CT_Scan" id="CT_Scan_a" value="CT_Scan">
+                                            <label class="form-check-label" for="CT_Scan_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="CT_Scan" id="CT_Scan_u" value="no">
+                                            <label class="form-check-label" for="CT_Scan_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="CT_Scan" id="CT_Scan" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-flex">
+                                <div class="form-row Facilities_side col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">Ambulance</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" class="btn-success" type="radio" name="Ambulance" id="Ambulance_a" value="Ambulance">
+                                            <label class="form-check-label" for="Ambulance_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="Ambulance" id="Ambulance_u" value="no">
+                                            <label class="form-check-label" for="Ambulance_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Ambulance" id="Ambulance" value="">
+                                    </div>
+                                </div>
+                                <div class="form-row col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">Dialysis Unit</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="Dialysis_Unit" id="Dialysis_Unit_a" value="Dialysis_Unit">
+                                            <label class="form-check-label" for="Dialysis_Unit_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="Dialysis_Unit" id="Dialysis_Unit_u" value="no">
+                                            <label class="form-check-label" for="Dialysis_Unit_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Dialysis_Unit" id="Dialysis_Unit" value="">
+                                    </div>
+                                </div>
+                                <div class="form-row col-lg-4">
+                                    <div class="form-flex">
+                                        <label for="birth_date" class="form-label fl">OT</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="Operation_Theatre" id="Operation_Theatre_a" value="Operation_Theatre">
+                                            <label class="form-check-label" for="Operation_Theatre_a">Available</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" type="radio" name="Operation_Theatre" id="Operation_Theatre_u" value="no">
+                                            <label class="form-check-label" for="Operation_Theatre_u">Not Available</label>
+                                        </div>
+                                        <input type="text" hidden name="Operation_Theatre" id="Operation_Theatre" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row Facilities_side col-lg-4">
+                            <div class="form-flex">
+                                <label for="birth_date" class="form-label fl" style="font-size: 16px;margin-left:-10px">Occupational Therapy</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="Occupational_Therapy" id="Occupational_Therapy_a" value="Occupational_Therapy">
+                                    <label class="form-check-label" for="Occupational_Therapy_a">Available</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="Occupational_Therapy" id="Occupational_Therapy_u" value="no">
+                                    <label class="form-check-label" for="Occupational_Therapy_u">Not Available</label>
+                                </div>
+                                <input type="text" hidden name="Occupational_Therapy" id="Occupational_Therapy" value="">
+                            </div>
+                        </div>
+
+                        <br><br>
+                    </div>
+                </section>
+
+                <!-- FACILITIES SECTION ENDS HERE -->
+
+                <!-- MISCELLANE FACILITIES STARTS HERE -->
+
+                <section id="mis_faci">
+                    <div class="container shadow-lg p-3 mb-5 bg-body rounded cont_center">
+                        <h3 class="text-center" class="sub-container-title">MISCELLANE FACILITIES</h3>
+                        <hr><br>
+                        <div class="form-row">
+                            <div class="form-flex">
+                                <div class="row mb-2 form-group side_margin">
+                                    <label for="no_of_doctors" class="col-sm-10 col-form-label fl">Total No. of Doctors</label>
+                                    <div class="col-sm-10">
+                                        <!-- NO OF DOCTORS -->
+                                        <input type="number" class="form-control" id="total_no_of_doctors" name="total_no_of_doctors" value="total_no_of_doctors" style="width:75%" data-toggle="tooltip" data-placement="bottom" title="Doctor" placeholder="Number of Doctors">
+                                    </div>
+                                    <span id="doctor_error" class="error"><br></span>
+
+                                </div>
+                                <div class="row mb-2 form-group">
+                                    <label for="no_of_ambulances" class="col-sm-10 col-form-label fl">Number of Ambulances</label>
+                                    <div>
+                                        <!-- AMBULANCE NUMBER -->
+                                        <input type="number" class="form-control" id="number_of_ambulances" name="number_of_ambulances" value="number_of_ambulances" style="width:75%" data-toggle="tooltip" data-placement="bottom" title="Ambulance" placeholder="Number of Ambulance">
+                                    </div>
+                                </div>
+                                <div class="row mb-2 form-group">
+                                    <label for="blood_bank_number" class="col-sm-10 col-form-label">Blood Bank Number</label>
+                                    <div class="col-sm-10">
+                                        <!-- BLOOD BANK NUMBER -->
+                                        <input type="number" data-toggle="tooltip" data-placement="bottom" title="Blood Bank" class="form-control" id="blood_bank_number" name="blood_bank_number" value="blood_bank_number" style="width:75%" placeholder="Number of Blood Bank ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                    </div>
+                </section>
+
+                <!-- MISCELLANE FACILITIES ENDS HERE -->
+
+
+                <section id="login_ess">
+                    <div class="container shadow-lg p-3 mb-5 bg-body rounded ">
+                        <h3 class="text-center" class="sub-container-title">Login Essentials</h3>
+                        <hr>
+                        <!--Primary email ID for Login-->
+                        <div class="col-md-4" style="margin-top:5px;margin-left:35%">
+                            <label for="primary_email" class="form-label fl">Login Email ID</label>
+                            <input type="email" class="form-control" id="primary_email_id" data-toggle="tooltip" data-placement="right" title="Primary Address " id="primary" name="primary_email_id_2" placeholder="Enter Primary Email Address">
+                        </div>
+                        <span id="email-error" class="error"><br></span>
+
+                        <div class="col-lg-4" style="margin-top:5px;margin-left:35%">
+                            <label class="form-label fl">Enter Password</label>
+
+                            <input type="password" class="form-control" data-toggle="tooltip" data-placement="right" title="Password " id="newpass" name="" placeholder="Enter Password">
+                        </div>
+                        <span id="pass_err" class="error"><br></span>
+                        <div class="col-lg-4" style="margin-top:5px;margin-left:35%">
+                            <label class="form-label fl">Confirm Password</label>
+                            <input type="password" class="form-control" data-toggle="tooltip" data-placement="bottom" title="Confirm " id="conpass" placeholder="Confirm Password" name="">
+
+                        </div>
+                        <span id="con_err" class="error"><br></span>
+                        <div class="col-lg-4" style="margin-top:5px;margin-left:45%">
+                            <button type="submit" class="btn btn-primary btnAction" name="button">Submit</button>
+
+                        </div>
+
+                        <!--Sign in button-->
+            </form>
+            </div>
+            </section>
+
+            </div>
+
+
+
+
+
+
+
+            <script>
+                $(document).ready(function() {
+
+
+
+                    $(function() {
+                        $('[data-toggle="tooltip"]').tooltip()
+                    })
+
+                    $('input[type=radio][name=ICU]').change(function() {
+                        document.getElementById("ICU").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=IPD]').change(function() {
+                        document.getElementById("IPD").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=OPD]').change(function() {
+                        document.getElementById("OPD").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Laboratory]').change(function() {
+                        document.getElementById("Laboratory").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Labour_Room]').change(function() {
+                        document.getElementById("Labour_Room").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Pharmacy]').change(function() {
+                        document.getElementById("Pharmacy").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Blood_Bank]').change(function() {
+                        document.getElementById("Blood_Bank").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Blood_Storage]').change(function() {
+                        document.getElementById("Blood_Storage").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Organ_Bank]').change(function() {
+                        document.getElementById("Organ_Bank").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Ambulance]').change(function() {
+                        document.getElementById("Ambulance").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Dialysis_Unit]').change(function() {
+                        document.getElementById("Dialysis_Unit").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Operation_Theatre]').change(function() {
+                        document.getElementById("Operation_Theatre").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Physiotherapy]').change(function() {
+                        document.getElementById("Physiotherapy").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=MRI]').change(function() {
+                        document.getElementById("MRI").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=CT_Scan]').change(function() {
+                        document.getElementById("CT_Scan").value = this.value;
+                        console.log(this.value)
+                    });
+                    $('input[type=radio][name=Occupational_Therapy]').change(function() {
+                        document.getElementById("Occupational_Therapy").value = this.value;
+                        console.log(this.value)
+                    });
+
+
+
+
+                    function validate() {
+                        var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+                        if (!$("#newpass").val().match(paswd)) {
+                            $("#pass_err").html("*7 to 15 characters which contain at least one numeric digit and a special character");
+                            $("#pass_err").css("color", "tomato");
+                            $("#pass_err").css("padding-bottom", "5px");
+                            output = false;
+                        } else {
+                            $("#pass_err").html("*Correct");
+                            $("#pass_err").css("color", "green");
+
+
+                        }
+                    }
+
+                    function same() {
+                        if ($("#newpass").val() != $("#conpass").val()) {
+                            $("#con_err").html("*Should be same as above");
+                            $("#con_err").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#con_err").html(" * Done");
+                            $("#con_err").css("color", "green");
+                        }
+                    }
+
+
+
+
+                    $('#newpass').keyup(function() {
+                        var output = validate();
+                        console.log("Hello");
+                    });
+                    $('#conpass').keyup(function() {
+                        var output = same();
+                        console.log("Doing");
+                    });
+
+                    $('#primary_email_id').keyup(function() {
+                        if (!$("#primary_email_id").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                            $("#email-error").html("*invalid email address");
+                            $("#email-error").css("color", "tomato");
+
+                            output = false;
+                        } else {
+                            $("#email-error").html("Done");
+                            $("#email-error").css("color", "green");
+
+                        }
+                    });
+                    $('#secondary_email_id').keyup(function() {
+                        if (!$("#secondary_email_id").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                            $("#secondary-error").html("*invalid email address");
+                            $("#secondary-error").css("color", "tomato");
+
+                            output = false;
+                        } else {
+                            $("#secondary-error").html("Done");
+                            $("#secondary-error").css("color", "green");
+
+                        }
+                    });
+                    $('#primary_email').keyup(function() {
+                        if (!$("#primary_email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                            $("#primary-error").html("*invalid email address");
+                            $("#primary-error").css("color", "tomato");
+
+                            output = false;
+                        } else {
+                            $("#primary-error").html("Done");
+                            $("#primary-error").css("color", "green");
+
+                        }
+                    })
+                    $('#nodal_email').keyup(function() {
+                        if (!$("#nodal_email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                            $("#nodal_email_error").html("*invalid email address");
+                            $("#nodal_email_error").css("color", "tomato");
+
+                            output = false;
+                        } else {
+                            $("#nodal_email_error").html("Done");
+                            $("#nodal_email_error").css("color", "green");
+
+                        }
+                    });;
+                    $('#hospital_name').keyup(function() {
+                        if (!$("#hospital_name").val().match(/(^[a-zA-Z][a-zA-Z\s]{0,30}[a-zA-Z]$)/)) {
+                            $("#name_error").html("*To Short");
+                            $("#name_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#name_error").html("Done");
+                            $("#name_error").css("color", "green");
+
+                        }
+                    });
+                    $('#nodal_name').keyup(function() {
+                        if (!$("#nodal_name").val().match(/(^[a-zA-Z][a-zA-Z\s]{0,30}[a-zA-Z]$)/)) {
+                            $("#nodal_name_error").html("*To Short");
+                            $("#nodal_name_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#nodal_name_error").html("Done");
+                            $("#nodal_name_error").css("color", "green");
+
+                        }
+                    });
+                    $('#hospital_contact').keyup(function() {
+                        if (!$("#hospital_contact").val().match(/((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/)) {
+                            $("#con_error").html("*Invalid");
+                            $("#con_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#con_error").html("Valid");
+                            $("#con_error").css("color", "green");
+
+                        }
+                    });
+                    $('#nodal_contact').keyup(function() {
+                        if (!$("#nodal_contact").val().match(/((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/)) {
+                            $("#nodal_con_error").html("*Invalid");
+                            $("#nodal_con_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#nodal_con_error").html("Valid");
+                            $("#nodal_con_error").css("color", "green");
+
+                        }
+                    });
+                    $('#hospital_desc').keyup(function() {
+                        if (!$("#hospital_desc").val().match(/(^[a-zA-Z][a-zA-Z\s]{15,90}[a-zA-Z]$)/)) {
+                            $("#desc_error").html("*Atleast of 20 words");
+                            $("#desc_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#desc_error").html("Perfect");
+                            $("#desc_error").css("color", "green");
+
+                        }
+                    });
+                    $('#state').keyup(function() {
+                        if (!$("#state").val().match(/(^[a-zA-Z][a-zA-Z\s]{1,20}[a-zA-Z]$)/)) {
+                            $("#state_error").html("*Invalid");
+                            $("#state_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#state_error").html("Perfect");
+                            $("#state_error").css("color", "green");
+
+                        }
+                    });
+                    $('#city').keyup(function() {
+                        if (!$("#city").val().match(/(^[a-zA-Z][a-zA-Z\s]{1,20}[a-zA-Z]$)/)) {
+                            $("#city_error").html("*Invalid");
+                            $("#city_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#city_error").html("Perfect");
+                            $("#city_error").css("color", "green");
+
+                        }
+                    });
+                    $('#hospital_registration_number').keyup(function() {
+                        if ($("#hospital_registration_number").val().length < 10) {
+                            $("#reg_error").html("*InValid Number ");
+                            $("#reg_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#reg_error").html("Perfect");
+                            $("#reg_error").css("color", "green");
+
+                        }
+                    });
+                    $('#address').keyup(function() {
+                        if ($("#address").val().length < 10) {
+                            $("#address_error").html("*Too Short");
+                            $("#address_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#address_error").html("Perfect");
+                            $("#address_error").css("color", "green");
+
+                        }
+                    });
+                    $('#pincode').keyup(function() {
+                        if (!($("#pincode").val().match(/[0-9]{6}/))) {
+                            $("#pincode_error").html("*Invalid Pincode ");
+                            $("#pincode_error").css("color", "tomato");
+                            output = false;
+                        } else {
+                            $("#pincode_error").html("Perfect");
+                            $("#pincode_error").css("color", "green");
+
+                        }
+                    });
+
+
+
+                });
+            </script>
+</body>
+
+</html>

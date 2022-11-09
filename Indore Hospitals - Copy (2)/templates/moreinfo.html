@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>MORE INFO</title>
+	<link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<link rel="stylesheet" href=".static\CSS\style.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/1367876d04.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+	<script>
+		 $(document).ready(function() {
+			 if ($(window).width() < 500) {
+			$('#back-to-home').hide();
+			$('#hospital_login').hide();
+			$("#h5").text(" ");
+			$("#title-info").hide();
+			$(".Facilities-info").hide();
+				$("#type_of_hos_mob").show();
+				$('#back-to-home-mob').show();
+$(".hr_col").show();
+				$("#type_of_hos").hide();
+				$(".amb-bed-mob").hide();
+				$("#search-text").attr("placeholder", "Search for Hospital").placeholder();
+
+
+			 }
+			 else{
+				 $("#logo").hide();
+					$(".hr_col").hide();
+				 $("#feature-imgs-mob").hide();
+				 $("#type_of_hos_mob").hide();
+				 $(".bed_amb").hide();
+				 $('#back-to-home-mob').hide();
+
+			 }
+		 });
+	</script>
+	<style media="screen">
+	.form-flex {
+			display: flex;
+	}
+	.navbar{
+      box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+  }
+
+
+
+	#back-to-home{
+	  text-decoration: none; margin-left: 20px;font-weight:bold;color:#3b168c;font-size:15px
+	}
+	#logo-img{
+	width:5% ;margin-left: 10%;
+	}
+	#logo-text{
+	  text-decoration:none;font-size:20px;color:black; font-weight:700;  font-family: 'Rubik';
+
+	}
+	#hospital_login{
+	  color:black;text-decoration: none;margin-left: 20%;  font-weight:bold;color:#3b168c;font-size:15px
+	}
+	#back-to-home-mob{
+	  color:#182747;
+	  font-weight: bolder;
+	  font-size: 23px;
+	  margin-right: 20%;
+	  margin-left: 3%;
+	}
+	#View_Other{
+	text-decoration: none; font-weight:bold;color:#3b168c;margin-top:25px;font-size:15px;
+	}
+    	.bed_title{
+	    	font-weight: bold;
+    		font-size: 15px;
+	    	margin-left: 15%;
+    	}
+
+		html {
+			height: 100%;
+		}
+
+		body {
+			margin:0;
+			padding:0;
+			font-family: sans-serif;
+			font-size: 14px;
+		}
+
+		.login-box {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 500px;
+			height: 420px;
+			padding: 40px;
+			transform: translate(-50%, -50%);
+			box-sizing: border-box;
+			box-shadow: 0 15px 25px rgba(0,0,0,.6);
+			border-radius: 10px;
+		}
+
+		.login-box h5 {
+			margin: 0 0 30px;
+			padding: 0;
+			color: black;
+			font-weight: 500;
+		}
+
+		.login-box .user-box {
+			position: relative;
+		}
+
+		.login-box .user-box input {
+			width: 100%;
+			padding: 10px 0;
+			font-size: 16px;
+			color: #277BC0;
+			margin-bottom: 30px;
+			border: none;
+			border-bottom: 1px solid black;
+			outline: none;
+			background: transparent;
+		}
+
+		.login-box .user-box label {
+			position: absolute;
+			top:0;
+			left: 0;
+			padding: 10px 0;
+			font-size: 16px;
+			color: black;
+			pointer-events: none;
+			transition: .5s;
+		}
+
+		.login-box .user-box input:focus ~ label,
+		.login-box .user-box input:valid ~ label {
+			top: -20px;
+			left: 0;
+			color: #3FC1C9;
+			font-size: 13px;
+			font-weight: bolder;
+		}
+
+		.login-box form a {
+			position: relative;
+			display: inline-block;
+			padding: 10px 20px;
+			color: #3FC1C9;
+			font-size: 16px;
+			text-decoration: none;
+			text-transform: uppercase;
+			overflow: hidden;
+			transition: .5s;
+			margin-top: 40px;
+			letter-spacing: 4px
+		}
+
+
+		.login-box a span {
+			position: absolute;
+			display: block;
+		}
+
+		.login-box a span:nth-child(1) {
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, #03e9f4);
+			animation: btn-anim1 1s linear infinite;
+		}
+
+		.login-box a span:nth-child(2) {
+			top: -100%;
+			right: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(180deg, transparent, #03e9f4);
+			animation: btn-anim2 1s linear infinite;
+			animation-delay: .25s
+		}
+
+		h5{
+			font-size:18px;
+		}
+
+		.login-box a span:nth-child(4) {
+			bottom: -100%;
+			left: 0;
+			width: 2px;
+			height: 100%;
+			animation: btn-anim4 1s linear infinite;
+			animation-delay: .75s
+		}
+
+		.beds_info{
+			margin-left: 2%;
+			margin-top: 3%;
+			width:125px;
+			height: 130px;
+		}
+
+		.beds_info:hover{
+			margin-left: 2%;
+			margin-top: 3%;
+			width:135px;
+			height: 135px;
+		}
+
+		button:hover{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+		}
+
+        .btnAction{
+            padding: 5px 45px 5px 45px;
+            background: #3b168c;
+            border: 0;
+            color: #FFF;
+            cursor: pointer;
+            margin-top: 15px;
+            width: max-content;
+            border-radius: 8px;
+			margin-left: 35%;
+			font-weight:500;
+        }
+
+		.btnAction:hover {
+            background: linear-gradient(135deg,  #3b168c);
+        }
+
+		.container2{
+			margin-top: 3%;
+			margin-left: 15%;
+			margin-bottom: 3%;
+			vertical-align: middle;
+			text-align: center;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+			padding: 25px;
+			width:350px;
+			border-radius: 10px;
+			background: linear-gradient(135deg, #5271ff, #3b168c);
+			color:white;
+			font-weight: bold;
+		}
+
+		.container2:hover{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+		}
+
+		.container {
+			vertical-align: middle;
+			max-width: 910px;
+			width: 100%;
+			background: white;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			padding: 2% 3%;
+			margin-top: 2%;
+			border-radius: 3%;
+		}
+
+		.container1 {
+    		max-width: 500px;
+    		background: white;
+    		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    		padding: 2% 2%;
+		    margin-top: 2%;
+		    border-radius: 3%;
+    		margin-left: 3%;
+			margin-right:2%;
+		}
+
+		.container_slide {
+			max-width: 500px;
+			background: white;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			margin-top: 2%;
+			margin-left: 3%;
+			margin-right:2%;
+			position: relative;
+		}
+
+		.container_slide:hover{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+		}
+
+		.av_con{
+			border: 2px;
+			font-weight: bold;
+			padding:15px
+		}
+
+
+
+
+		.navbar{
+			height: 70px;
+		}
+
+		/* Hide the images by default */
+		.mySlides {
+  			display: none;
+		}
+
+		/* Add a pointer when hovering over the thumbnail images */
+		.cursor {
+  			cursor: pointer;
+		}
+
+		/* Next & previous buttons */
+		.prev,
+		.next {
+  			cursor: pointer;
+  			position: absolute;
+  			top: 60%;
+  			width: auto;
+  			padding: 16px;
+  			margin-top: -50px;
+  			color: white;
+  			font-weight: bold;
+  			font-size: 15px;
+  			border-radius: 0 3px 3px 0;
+  			user-select: none;
+  			-webkit-user-select: none;
+		}
+
+		/* Position the "next button" to the right */
+		.next {
+  			right: 0;
+  			border-radius: 3px 0 0 3px;
+		}
+
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover,
+		.next:hover {
+  			background-color: rgba(0, 0, 0, 0.8);
+			color:white;
+		}
+
+		/* Number text (1/3 etc) */
+		.numbertext {
+  			color: #f2f2f2;
+  			font-size: 12px;
+  			padding: 8px 12px;
+  			position: absolute;
+  			top: 0;
+		}
+
+		/* Container for image text */
+		.row:after {
+  			content: "";
+  			display: table;
+  			clear: both;
+		}
+
+		/* Six columns side by side */
+		.column {
+  			float: left;
+  			width: 16.66%;
+		}
+
+		/* Add a transparency effect for thumnbail images */
+		.demo {
+  			opacity: 0.6;
+		}
+
+		.active,
+		.demo:hover {
+  			opacity: 1;
+		}
+
+		.myDIV:hover+.hide {
+			display: block;
+			transition-timing-function: ease-in;
+		}
+
+		.hide {
+			display: none;
+			transition-duration: 5s;
+			transition-delay: 2s;
+		}
+		#logo-text{
+		  text-decoration:none;font-size:20px;color:black; font-weight:700;  font-family: 'Rubik';
+
+		}
+		#hospital_name{
+			font-size:20px;font-weight:600;
+		}
+		.form-flex1 {
+				display:flex;
+		}
+		h3 {
+			color: #4723D9;
+		    text-transform:capitalize;
+		    font-size: 25px;
+		}
+		.hospital_type{
+padding:5px 10px;margin-left:2%;margin-right: 8%;background:#3CCF4E; color:white; border-radius: 5px;font-weight:bold;margin-bottom:2%;font-size:13px;
+		}
+		.hospital_cat{
+		font-size:15px;
+		margin-left: 2%;
+		margin-top:2%;
+		font-weight: bold;
+		}
+		.hospital_address{
+		font-size:18px;font-weight:bold;
+		}
+		.hospital_faci{
+			font-size:18px;
+			font-weight:bold;
+		}
+		.nodal_contact{
+			margin-left:15px;
+		}
+		.Facilities{
+	margin-left:19px;
+	 width:30px;
+	  height:30px;
+		}
+		.beds_av{
+	margin-top:2%;margin-left:1%;font-weight:bold;
+		}
+		.amb_av{
+			margin-top:2%;margin-left:1%;
+		}
+		.Description_title{
+		font-size:18px;font-weight:bold;
+		}
+		.contact_detailes{
+		font-size:18px;margin-bottom:25px;font-weight:bold;
+		}
+		.my_slides_img{
+			width:100%;
+		}
+		a{
+			text-decoration: none;
+		}
+	@media only screen and (max-width: 600px) {
+		.container {
+			vertical-align: middle;
+			max-width: 910px;
+			width: 100%;
+			background: white;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0);
+			padding: 2% 3%;
+			margin-top: 2%;
+			border-radius: 3%;
+		}
+		.container2{
+		margin-top: 3%;
+		margin-left: 5%;
+		margin-bottom: 3%;
+		vertical-align: middle;
+		text-align: center;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+		padding: 25px;
+		width:350px;
+		border-radius: 10px;
+		background: linear-gradient(135deg, #182747, #3b168c);
+		color:white;
+		font-weight: bold;
+	}
+		.container1 {
+
+    		box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+
+		}
+
+		.av_con{
+			border: 2px;
+			font-weight: bold;
+			padding:15px;
+			font-size: 20px;
+			margin-top: 10%;
+		}
+
+
+		.bed_title{
+			font-weight: bold;
+			font-size: 20px;
+			margin-left: 15%;
+		}
+
+		.beds_info{
+			margin-left: 5%;
+			margin-top: 3%;
+			width:200px;
+			height: 170px;
+		}
+		.beds_info:hover{
+			margin-left: 5%;
+			margin-top: 3%;
+			width:200px;
+			height: 170px;
+		}
+
+
+		#hospital_name{
+			font-size:25px;font-weight:600;
+		}
+		.hospital_type{
+			font-size:10px;font-weight:600;
+		}
+		.hospital_cat{
+		font-size:15px;
+		margin-left: 2%;
+		margin-top:2%;
+		font-weight: bold;
+		}
+		.beds_av,.hospital_faci, .hospital_address{
+		font-size:20px;
+		margin-left: 2%;
+		margin-top:2%;
+		font-weight: bold;
+		margin-bottom: 3%;
+		text-transform: capitalize;
+		}
+		#back-to-home-mob{
+			color:#182747;
+			font-weight: bolder;
+			font-size: 25px;
+			margin-right: 20%;
+			margin-left: 3%;
+		}
+		#address{
+			font-size: 20px;
+		}
+		.form-flex {
+				display:inline-block;
+		}
+		.form-flex1 {
+				display:flex;
+		}
+		#logo-text{
+			font-size: 25px;
+			font-weight: 700;
+		}
+		#logo-img{
+		width:6% ;margin-left: 10%;
+		}
+		.Facilities{
+	margin-left:19px;
+	 width:40px;
+		height:40px;
+		margin-top: 1%;
+		}
+		.menu_option{
+			font-size: 13px;
+			font-weight: 500;
+			color:#EEEEEE;
+		}
+		.a_b{
+			margin-left: 25%;
+		}
+		.a_b :focus{
+color:grey;
+			}
+	a:hover{
+		color:grey;
+	}
+	}
+
+	</style>
+
+</head>
+
+<body>
+    <form action="/moreinfo/{{obj.sno}}"></form>
+
+	<nav class="navbar navbar-light bg-light justify-content-between myDIV">
+
+<div class="col-lg-4">
+  <a href="frontpage.html" class="nav_link" id="back-to-home"><i class="fa-regular fa-circle-left"></i><span class="nav_name">&nbsp  Back To Home</span></a>
+</div>
+    <div class="nav-brand col-lg-5">
+      <a href="index.html" class="nav_link" id="back-to-home-mob"><i class="fa-regular fa-circle-left"></i></a>
+
+      <a href="#" class="navbar-brand"><img id="logo-img" src="..\static\img\logo.png"></a>
+
+  <a href="#" id="logo-text"><span style="color:#0071bc">I</span><span style="color:#2e3192">HBA</span></a>
+    </div>
+
+
+    <div class="col-lg-2">
+      <a href="hospital_login.html" id="hospital_login"><i class="fa-sharp fa-solid fa-right-to-bracket"></i>&nbsp Hospital Login</a>
+
+    </div>
+
+  </nav>
+	<!-- <div class="hide">
+	    <div class="collapse show" data-parent=".faq-list" style="margin-bottom: 5px !important;margin-left:10%;padding:5px;width:80%; background-color:lemonchiffon;">
+	        <p class="text-justify mb-2">It is an effort to capture the Status of Bed availability as frequently as possible. The Hospitals have been requested to update their vacancy status in the portal as frequently as possible and at least twice daily at 12 Noon and 6 PM.
+	            However, it is advised that you may call the hospital at the contact number of the hospital to get further details.
+	        </p>
+	    </div>
+	</div> -->
+    <div class="row">
+	<!-- <div class="form-flex"> -->
+        <div class=" container col-lg-7">
+			<div class="form-row">
+				<div class="form-flex1">
+					<div class="">
+						<h6 class="hospital_type">{{obj.hospital_type}}</h6>
+
+					</div>
+					<!--<h6 id="lastupdate" name="lastupdate" style="margin-left:60%; color:grey;font-weight:bold;margin-bottom:2%;font-size:14px"> Last update :Less than an hour</h6>-->
+
+
+			<h3 id="hospital_name" name="hospital_name" value="hospital_name"  >{{obj.hospital_name}}</h3>		</div>		</div>
+			<div class="form-row">
+				<div class="form-flex1">
+					<div class="col-lg-10">
+						<h5 class="hospital_cat"  name="hospital_cat" value="hospital_cat" >Medical_College/Institute</h5>
+					</div>
+
+				</div>
+			</div>
+			<br>
+            <div class="Address topic_title" id="address_detailes">
+                <h5 class="hospital_address">Address</h5>
+ 	            <p id="address" value="hospital_address">{{obj.hospital_address}}</p>
+            </div>
+						<div class="hr_col">
+							<br><hr>
+						</div>
+
+            <div>
+	            <h5 class="hospital_faci"> Facilities</h5>
+                <div class="form-row">
+	                <div class="form-flex">
+		                <div class="col-lg-12">
+                        <br>
+                        <div class="form-row">
+	                        <div class="form-flex">
+		                        <div class="col-lg-10" >
+			                        <img src="static\img\ambulance.jpg" class="Facilities"  alt="">
+			                        <img src="static\img\icu.jpg" class="Facilities"  alt="">
+			                        <img src="static\img\Oxygen cylinder.png" class="Facilities"  alt="">
+			                        <img src="static\img\ventilator.jpg" class="Facilities"  alt="">
+			                        <img src="static\img\operation_theatre.jpg" class="Facilities"  alt="">
+			                        <img src="static\img\pharmacy.jpg" class="Facilities"  alt="">
+		                        </div>
+
+	                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+								<div class="hr_col">
+									<br><hr>
+								</div>
+                <h5 class="beds_av" id="bed_detailes"> Bed's Available </h5>
+                <!-- <div > -->
+	                <div class="row">
+                        <div class="col-lg-2 col-sm-6 col-md-6 shadow p-3 mb-5 bg-body rounded beds_info">
+                            <h6  class="bed_title">General</h6>
+	                        <h4 id="available_general_beds" name="available_general_beds"  value="available_general_beds" class="av_con" >{{obj.available_general_beds}}</h4>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-md-6 shadow p-3 mb-5 bg-body rounded beds_info">
+    	                    <h6 class="bed_title" >Oxygen</h6>
+		                    <h4 id="available_oxygen_beds" name="available_oxygen_beds " value="available_oxygen_beds" class="av_con" >{{obj.available_oxygen_beds}}</h4>
+                        </div>
+                        <div class="col-lg-2 shadow p-3 mb-5 bg-body rounded beds_info">
+	                        <h6  class="bed_title">I.C.U Beds</h6>
+		                    <h4 id="available_icu_beds" name="available_icu_beds "  value="available_icu_beds" class="av_con" >{{obj.available_icu_beds}}</h4>
+                        </div>
+                        <div class="col-lg-2 shadow p-3 mb-5 bg-body rounded beds_info">
+	                        <h6 class="bed_title">Ventilator</h6>
+		                    <h4 id="available_icu_beds_with_ventilator" name="available_icu_beds_with_ventilator" value="available_icu_beds_with_ventilator" class="av_con">{{obj.available_icu_beds_with_ventilator}}</h4>
+                        </div>
+                        <div class="col-lg-2 shadow p-3 mb-5 bg-body rounded beds_info">
+	                        <h6 class="bed_title">EWS  Beds</h6>
+		                    <h4 id="available_ews_beds" name="available_ews_beds " value="available_ews_beds" class="av_con" >{{obj.available_ews_beds}}</h4>
+                        </div>
+                        <div class="col-lg-2 shadow p-3 mb-5 bg-body rounded beds_info">
+	                        <h6 class="bed_title">Pvt. Wards</h6>
+		                    <h4 id="available_private_wards" name="available_private_wards" value="available_private_wards" class="av_con" >{{obj.available_private_wards}}</h4>
+                        </div>
+	                </div>
+                <!-- </div> -->
+                <h5 class="amb_av" id="amb_detailes"> Ambulance Available </h5>
+                <div class="col-lg-6">
+	                <div class="form-row">
+		                <div class="form-flex">
+	                        <div class="col-lg-2 shadow p-3 mb-5 bg-body rounded beds_info">
+	                            <h6  class="bed_title">Ambulance</h6>
+		                        <h4 id="number_of_ambulances" name="number_of_ambulances" value="number_of_ambulances" class="av_con" >{{obj.number_of_ambulances}}</h4>
+	                        </div>
+	                        <div class="col-lg-2 shadow p-3 mb-5 bg-body rounded beds_info">
+		                        <h6 class="bed_title" >Cardic</h6>
+			                    <h4 id="available_ambulance_cardic" name="available_oxygen_beds " class="av_con" >{{obj.number_of_cardic_ambulances}}</h4>
+	                        </div>
+		                </div>
+	                </div>
+                </div>
+            </div>
+        </div>
+<div class="hr_col">
+	<br><hr>
+</div>        <div class=" container1 col-lg-5 col-md-5 col-12 ">
+	        <div class="Description topic_title" id="info_detailes">
+                <h5 class="Description_title">Description</h5>
+		        <p id="Description">{{obj.hospital_desc}}</p>
+	        </div>
+            <br>
+						<div class="hr_col">
+							<br><hr>
+						</div>
+            <div class="col-lg-1"></div>
+	        <div class=" container2 col-lg-7" >
+		        <h5 id="contact_detailes" class="contact_detailes">Contact Details</h5>
+		        <div class="form-row">
+			        <div class="form-flex">
+				        <div class="col-lg-5">
+					    	<p>Hospital Contact</p>
+				    	</div>
+				    	<div class="col-lg-1">:</div>
+                    	<div class="col-lg-5">
+	                    	<p id="nodal_contact" class="nodal_contact">{{obj.hospital_contact}}</p>
+                    	</div>
+			    	</div>
+		    	</div>
+	        	<div class="form-row">
+		        	<div class="form-flex">
+			        	<div class="col-lg-5">
+				        	<p>Blood Bank Contact</p>
+			        	</div>
+			        	<div class="col-lg-1">:</div>
+			        	<div class="col-lg-5">
+				        	<p id="toll_free_contact">{{obj.blood_bank_number}}</p>
+			        	</div>
+		        	</div>
+	        	</div>
+
+        		</div>
+			<div class="hr_col">
+					<br><hr>
+				</div>
+	    		<h5 style="font-size:18px;font-weight:bold;margin-left:5%">Hospital Images</h5>
+        		<br>
+
+			</div>
+		</div>
+		<nav class="navbar fixed-bottom navbar-dark" style="color:white;background:#182747;"id="type_of_hos_mob">
+<div class="col-sm-1">
+
+</div>
+			<div class="col-sm-1">
+				<a href="#address_detailes" class="menu_option active"><i class="fa-solid fa-location-dot a_b "></i> <br>add</a>
+			</div>
+
+			<div class="col-sm-2">
+				<a href="#bed_detailes" class="menu_option active "><i class="fa-solid fa-bed a_b "></i><br>bed</a>
+			</div>
+			<div class="col-sm-2">
+				<a href="#amb_detailes" class="menu_option active"><i class="fa-solid fa-truck-medical a_b"></i><br>amb</a>
+			</div>
+			<div class="col-sm-2">
+				<a href="#info_detailes" class="menu_option active"><i class="fa-solid fa-circle-info a_b"></i><br>info</a>
+			</div>
+			<div class="col-sm-2">
+				<a href="#contact_detailes" class="menu_option"><i class="fa-solid fa-phone a_b"></i><br>contact</a>
+			</div>
+			<div class="col-sm-1">
+				<a href="#img_detailes" class="menu_option"><i class="fa-solid fa-images a_b"></i><br>Imgs</a>
+			</div>
+			<div class="col-sm-1">
+
+			</div>
+		</nav>
+</body>
+	<!-- <script>
+
+	let slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  let i;
+	  let slides = document.getElementsByClassName("mySlides");
+	  let dots = document.getElementsByClassName("demo");
+	  let captionText = document.getElementById("caption");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+	    slides[i].style.display = "none";
+	  }
+	  for (i = 0; i < dots.length; i++) {
+	    dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";
+	  dots[slideIndex-1].className += " active";
+	  captionText.innerHTML = dots[slideIndex-1].alt;
+	}
+	</script> -->
+</html>

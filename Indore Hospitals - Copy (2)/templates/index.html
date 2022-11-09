@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>IHBA</title>
+  <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/backup.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/1367876d04.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script>
+     $(document).ready(function() {
+       if ($(window).width() < 500) {
+      $('#back-to-home').hide();
+      $('#hospital_login').hide();
+      $("#h5").text(" ");
+      $("#title-info").hide();
+      $(".Facilities-info").hide();
+        $("#type_of_hos_mob").show();
+        $('#back-to-home-mob').show();
+
+        $("#type_of_hos").hide();
+        $(".amb-bed-mob").hide();
+        $("#search-text").attr("placeholder", "Search for Hospital").placeholder();
+
+
+       }
+       else{
+         $("#logo").hide();
+         $("#feature-imgs-mob").hide();
+         $("#type_of_hos_mob").hide();
+         $(".bed_amb").hide();
+         $('#back-to-home-mob').hide();
+
+       }z
+     });
+  </script>
+<style media="screen">
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: white;
+}
+
+#back-to-home-mob{
+  color:#182747;
+  font-weight: bolder;
+  font-size: 23px;
+  margin-right: 20%;
+  margin-left: 3%;
+}
+
+.bed_amb{
+  width:60px;
+  height:30px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color:white;
+  border-radius: 3px;
+  margin-left: 2%;
+  font-size: 12px;
+}
+.icon-bed_amb{
+  margin-left: 10%;
+  margin-top: 8%;
+}
+.label-bed_amb{
+margin-left: 10%;
+margin-top: 8%;
+font-weight: bold;
+}
+.container {
+vertical-align: middle;
+max-width: 1200px;
+width: 100%;
+background: white;
+box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin-top: 2%;
+border-radius: 3%;
+padding:2% 2%;
+margin-left:10%;
+
+}
+.container-nav {
+vertical-align: middle;
+max-width: 1200px;
+width: 100%;
+background: white;
+box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+margin-top: 1.5%;
+border-radius: 3%;
+padding:1.2% 2% 1.2%;
+margin-left:10%;
+}
+.main-container{
+background: linear-gradient(135deg, #3b168c, #2155CD);
+  color:white;
+  font-weight:600;
+  margin-top:-1.3%;
+  font-size: 15px;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-flex {
+  display: flex;
+}
+
+#steps-uid-0-p-0 .form-row,
+#steps-uid-0-p-0 .form-group,
+#steps-uid-0-p-0 .form-date {
+  width: 680px;
+}
+
+.form-flex {
+  margin: 0 -10px;
+}
+
+.form-flex .form-group {
+  width: 50%;
+  padding: 0 10px;
+}
+
+.form-group,
+.form-date {
+  margin-bottom: 18px;
+  position: relative;
+}
+.element{
+margin-left: 25px;
+}
+
+  .navbar{
+      box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+  }
+  .menu_option {
+    margin-left: 3%;
+    padding-top: 2%;
+    text-decoration: none;
+    font-size: 17px;
+    color: #737373;
+    font-weight: 500;
+    font-family: 'Rubik';
+  }
+
+  .menu_option:hover {
+    color: #0AA1DD;
+    border-bottom: 3px solid #0AA1DD;
+    border-radius: 2px;
+    padding-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .active {
+    border-bottom: 5.5px solid royalblue;
+    border-radius: 1.2px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+
+  .register {
+    font-weight: 700;
+  }
+  .login{
+    padding-right:13px;
+    padding-left:13px;
+    font-size:15px;
+    background:#0096FF;
+  }
+  .header-red,.content{
+    font-weight: bold;
+    color:white;
+    font-size: 15px;
+  }
+.header-red{
+  font-size: 18px;
+
+}
+.btn-light{
+  font-weight: bold;
+  color:black;
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+.title_container{
+  color:Black;
+  font-weight: bold;
+  font-style: 35px;
+  margin-left: 35%
+}
+.profile{
+  text-decoration:none;
+   padding-left: 45%;
+    padding-right: 25px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    font-size:25px;
+    color:#363636;
+    font-weight:600;
+}
+
+
+
+.dropbtn {
+  background-color: #0096FF;
+  color: white;
+  padding:5px;
+  font-size: 12px;
+  margin-left:3%;
+  border: none;
+  font-weight:600;
+  border-radius:10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius:15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight:600;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #0096FF;}
+.type{
+  color:#0096FF;
+  font-weight:bold;
+  margin-right:20%;
+}
+option{
+  font-weight:600;
+}
+option:hover{
+  font-weight:300;
+
+}
+.card{
+  margin-bottom: 3%;
+}
+.card-header{
+  background:white;
+  font-weight:600;
+
+}
+.goverment{
+  background: #0096FF;
+  color:white;
+  margin-right:2%;
+  padding-left:15px;padding-right:15px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-radius:5px;
+  font-size:12px;
+  font-weight: 700;
+}
+.description_title{
+  font-weight:600;
+  color:#363636;
+  font-size:15px;
+}
+.form-row{
+  padding-left: 15px;
+}
+.description_content{
+  font-size:14px;
+padding-right:35px;
+}
+.deadline{
+  font-weight:bold;
+}
+.btn-color{
+background: linear-gradient(25deg, #3b168c, #5271ff);
+  color:white;
+  font-weight: 700;
+}
+.Facilities{
+	width:30px;
+	height:30px;
+	margin-left: 15px;
+	margin-top: 2px;
+}
+.Facilities:hover{
+	width:55px;
+	height:55px;
+	margin-left: 15px;
+	margin-top: 2px;
+	delay:2s;
+}
+.hide {
+    display: none;
+    transition-duration: 5s;
+    transition-delay: 2s;
+}
+
+.myDIV:hover+.hide {
+    display: block;
+    transition-timing-function: ease-in;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 50%;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+              opacity: 0.6;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+#back-to-home{
+  text-decoration: none; margin-left: 20px;font-weight:bold;color:#3b168c;font-size:15px
+}
+#logo-img{
+width:5% ;margin-left: 10%;
+}
+#logo-text{
+  text-decoration:none;font-size:20px;color:black; font-weight:700;  font-family: 'Rubik';
+
+}
+#hospital_login{
+  color:black;text-decoration: none;margin-left: 20%;  font-weight:bold;color:#3b168c;font-size:15px
+}
+#search-text{
+  border-radius:0px;border-radius:4px 0px 0px 4px;
+}
+#search-icon{
+margin-left:-10px;border-radius:0px;border-radius:0px 4px 4px 0px;
+}
+#sort-hov{
+width:100px;margin-top:5px;background-color:royalblue;
+}
+#moreinfo-btn{
+margin-left:55%;width:125px;height:35px;margin-top:5%"
+}
+@media only screen and (max-width: 600px) {
+
+
+  .container {
+  vertical-align: middle;
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 2%;
+  border-radius: 3%;
+  padding:2% 3%;
+  margin-left:0%;
+  }
+  .container-nav {
+  vertical-align: middle;
+  max-width: 1200px;
+  width: 100%;
+  background: #182747;
+  margin-top: 2.5%;
+  border-radius: 3%;
+  padding:1.2% 2% 1.2%;
+  margin-left:3%;
+  }
+
+#searchbox{
+  margin-left: 8%;
+}
+.Facilities{
+	width:20px;
+	height:20px;
+	margin-left: 5px;
+	margin-top: 2px;
+}
+  .active {
+    border-top: 5.5px solid royalblue;
+    border-radius: 1.2px;
+    padding-bottom: 10px;
+    padding-top: 25px;
+    font-weight: bolder;
+  }
+  .container-nav {
+  vertical-align: middle;
+  max-width: 1200px;
+  width: 100%;
+  background: #182747;
+  margin-top: 2.5%;
+  border-radius: 3%;
+  padding:1.2% 2% 1.2%;
+  margin-left:0%;
+  }
+  .menu_option {
+    margin-left: 3%;
+    padding-top: 2%;
+    text-decoration: none;
+    font-size: 17px;
+    color: #EEEEEE;
+    font-weight: 500;
+    font-family: 'Rubik';
+  }
+
+  #moreinfo-btn{
+  margin-left:65%;
+  width:115px;
+  height:35px;
+  font-size: 15px;
+  }
+#deadline{
+  font-weight: bolder;
+  color:#182747;
+  margin-right: 2px;
+}
+.description_title{
+  font-weight:bolder;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+ <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-chevron-up"></i></button>
+ <div class="progress-container">
+<div class="progress-bar" id="myBar"></div></div>
+  <nav class="navbar navbar-light bg-light justify-content-between myDIV">
+
+<div class="col-lg-4">
+  <a href="frontpage.html" class="nav_link" id="back-to-home"><i class="fa-regular fa-circle-left"></i><span class="nav_name">&nbsp  Back To Home</span></a>
+</div>
+    <div class="nav-brand col-lg-5">
+      <a href="index.html" class="nav_link" id="back-to-home-mob"><i class="fa-regular fa-circle-left"></i></a>
+
+      <a href="#" class="navbar-brand"><img id="logo-img" src="..\static\img\logo.png"></a>
+
+  <a href="#" id="logo-text"><span style="color:#0071bc">I</span><span style="color:#2e3192">HBA</span></a>
+    </div>
+
+
+    <div class="col-lg-2">
+      <a href="/login" id="hospital_login"><i class="fa-sharp fa-solid fa-right-to-bracket"></i>&nbsp Hospital Login</a>
+
+    </div>
+
+  </nav>
+  <!-- <div class="hide">
+      <div class="collapse show" data-parent=".faq-list" style="margin-bottom: 5px !important;margin-left:10%;padding:5px;width:80%; background-color:lemonchiffon;">
+          <p class="text-justify mb-2">
+              It is an effort to capture the Status of Bed availability as frequently as possible. The Hospitals have been requested to update their vacancy status in the portal as frequently as possible and at least twice daily at 12 Noon and 6 PM. However, it is
+              advised that you may call the hospital at the contact number of the hospital to get further details.
+          </p>
+      </div>
+  </div> -->
+<div class="container-nav">
+<div class="form-row">
+  <div class="form-flex">
+
+    <div class="col-lg-2">
+      <div class="dropdown">
+    <button class="dropbtn" id="sort-hov"> <i class="fa-solid fa-arrow-up-z-a"></i>&nbsp &nbspSORT BY <i class="fa-solid fa-chevron-down"></i></button>
+    <div class="dropdown-content">
+      <a href="#"><i class="fa-solid fa-arrow-down-a-z type"></i> Name</a>
+      <a href="#"><i class="fa-regular fa-clock type"></i>Latest Updated </a>
+    </div>
+  </div>
+
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+    <div class="col-lg-4" id="type_of_hos">
+      <a href="#" class="menu_option ">GOVERMENT</a>
+      <a href="#" class="menu_option active">PRIVATE</a>
+      <a href="#" class="menu_option">VIEW ALL</a>
+    </div>
+<div class="col-lg-4 " id="searchbox">
+  <div class="form-outline">
+    <form class="d-flex" role="search">
+          <input class="form-control me-2 " type="search"  id="search-text" placeholder="Search here for Hosptial and Facilities" aria-label="Search">
+          <button class="btn btn-color"  id="search-icon"type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+  </div>
+</div>
+
+
+
+
+
+</div>
+</div>
+</div>
+<div class="container">
+  <div class="shadow-sm p-3 mb-5  rounded main-container  " id="title-info">
+           <div class="form-row">
+
+
+               <div class="form-flex">
+
+                   <div class="col-lg-6">
+                       <label >Name of Hospital</label>
+                   </div>
+
+
+                   <div class="col-lg-2">
+                       <label>Contact</label>
+                   </div>
+                   <div class="col-lg-2">
+                       <label>Bed's Available</label>
+                   </div>
+                   <div class="col-lg-2">
+                       <label>Ambulance</label>
+                   </div>
+
+               </div>
+
+           </div>
+    </div>
+
+    <div>
+
+       <div class="card">
+        <div class="card-header">
+
+      {% if (obj|length) == 0 %}
+        <p>No hospital available</p>
+      {% endif %}
+      <!-- Loop Starts Here -->
+      {% set y = 1 %}
+      {% for x in obj %}
+        <div class="card">
+          <!-- Hospital Name -->
+          <div class="card-header">
+            <label>{{ x.hospital_name }}</label>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <div class="form-flex">
+                <!-- hospital_address -->
+                <div class="col-lg-4">
+                  <label>{{ x.hospital_address }}</label>
+                </div>
+                <!-- time -->
+                <div class="col-lg-2">
+                  <label><p>{{x.hospital_type}}</p></label>
+                </div>
+                <!-- hospital_contact -->
+                <div class="col-lg-2">
+                  <label>{{ x.hospital_contact }}</label>
+                </div>
+                <!-- available_beds -->
+                <div class="col-lg-2">
+                  <label>{{ x.available_general_beds }}</label>
+                </div>
+                <!-- no_of_ambulance_availables -->
+                <div class="col-lg-2">
+                  <label>{{ x.primary_email_id }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row" style="margin-top:3%">
+              <div class="form-flex">
+                
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4 form-flex">
+                  <a href="/moreinfo/{{x.sno}}" style="margin-left:55%" type="button" class="btn btn-outline-dark">MORE INFO</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+        </div>
+        </div>
+
+    </div>
+    <nav class="navbar fixed-bottom navbar-dark" style="color:white;background:#182747;"id="type_of_hos_mob">
+      <div class="col-sm-1">
+    
+      </div>
+      <div class="col-sm-3">
+        <a href="#" class="menu_option ">GOVERMENT</a>
+      </div>
+      <div class="col-sm-3">
+        <a href="#" class="menu_option active">PRIVATE</a>
+      </div>
+      <div class="col-sm-4">
+        <a href="#" class="menu_option">VIEW_ALL</a>
+      </div>
+      <div class="col-sm-1">
+    
+      </div>
+    </nav>
+  </body>
+  <script>
+    let button = document.getElementById('submit-form')
+    
+    button.onclick = myfunction(e)
+    {
+      e.preventDefault()
+      location.href = 'moreinfo.html'
+    }
+   
+  </script>
+</html>

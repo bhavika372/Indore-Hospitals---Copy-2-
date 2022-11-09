@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin-Hospital Info</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Hospital Info</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Login Info-->
+    <div class="container my-3">
+        {% for x in obj %}    
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">hospital_type</th> 
+                        <th scope="col">hospital_name</th>
+                        <th scope="col">hospital_desc</th>
+                        <th scope="col">hospital_contact</th>
+                        <th scope="col">primary_email_id</th>
+                        <th scope="col">secondary_email_id</th>
+                        <th scope="col">hospital_state</th>
+                        <th scope="col">hospital_city</th>
+                        <th scope="col">hospital_address</th>
+                        <th scope="col">hospital_pincode</th>
+                        <th scope="col">hospital_registration_number</th>
+                        <th scope="col">nodal_person_name_and_designation</th>
+                        <th scope="col">nodal_person_telephone_number</th>
+                        <th scope="col">nodal_person_email_id</th>
+                        <th scope="col">total_general_beds</th>
+                        <th scope="col">available_general_beds</th>
+                        <th scope="col">total_oxygen_beds</th>
+                        <th scope="col">available_oxygen_beds</th>
+                        <th scope="col">total_icu_beds</th>
+                        <th scope="col">available_icu_beds</th>
+                        <th scope="col">total_icu_beds_with_ventilator</th>
+                        <th scope="col">available_icu_beds_with_ventilator</th>
+                        <th scope="col">total_ews_beds</th>
+                        <th scope="col">available_ews_beds</th>
+                        <th scope="col">total_private_wards</th>
+                        <th scope="col">available_private_wards</th>
+                        <th scope="col">login_passcode</th>
+                        <th scope="col">total_no_of_doctors</th>
+                        <th scope="col">number_of_ambulances</th>
+                        <th scope="col">blood_bank_number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{x.hospital_type}}</td> 
+                        <td>{{x.hospital_name}}</td>
+                        <td>{{x.hospital_desc}}</td>
+                        <td>{{x.hospital_contact}}</td>
+                        <td>{{x.primary_email_id}}</td>
+                        <td>{{x.secondary_email_id}}</td>
+                        <td>{{x.hospital_state}}</td>
+                        <td>{{x.hospital_city}}</td>
+                        <td>{{x.hospital_address}}</td>
+                        <td>{{x.hospital_pincode}}</td>
+                        <td>{{x.hospital_registration_number}}</td>
+                        <td>{{x.nodal_person_name_and_designation}}</td>
+                        <td>{{x.nodal_person_telephone_number}}</td>
+                        <td>{{x.nodal_person_email_id}}</td>
+                        <td>{{x.total_general_beds}}</td>
+                        <td>{{x.available_general_beds}}</td>
+                        <td>{{x.total_oxygen_beds}}</td>
+                        <td>{{x.available_oxygen_beds}}</td>
+                        <td>{{x.total_icu_beds}}</td>
+                        <td>{{x.available_icu_beds}}</td>
+                        <td>{{x.total_icu_beds_with_ventilator}}</td>
+                        <td>{{x.available_icu_beds_with_ventilator}}</td>
+                        <td>{{x.total_ews_beds}}</td>
+                        <td>{{x.available_ews_beds}}</td>
+                        <td>{{x.total_private_wards}}</td>
+                        <td>{{x.available_private_wards}}</td>
+                        <td>{{x.login_passcode}}</td>
+                        <td>{{x.total_no_of_doctors}}</td>
+                        <td>{{x.number_of_ambulances}}</td>
+                        <td>{{x.blood_bank_number}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        {% endfor %}
+    </div>
+    <div class="container my-3">
+        {% for x in obj %}    
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ICU</th> 
+                        <th scope="col">IPD</th>
+                        <th scope="col">OPD</th>
+                        <th scope="col">Laboratory</th>
+                        <th scope="col">Pharmacy</th>
+                        <th scope="col">Labour Room</th>
+                        <th scope="col">Blood Bank</th>
+                        <th scope="col">Blood Storage</th>
+                        <th scope="col">Organ Bank</th>
+                        <th scope="col">Dialysis Unit</th>
+                        <th scope="col">Operation Theatre</th>
+                        <th scope="col">Physiotherapy</th>
+                        <th scope="col">MRI</th>
+                        <th scope="col">CT Scan</th>
+                        <th scope="col">Diagnostics</th>
+                        <th scope="col">Occupational Therapy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{x.ICU}}</td> 
+                        <td>{{x.IPD}}</td>
+                        <td>{{x.OPD}}</td>
+                        <td>{{x.Laboratory}}</td>
+                        <td>{{x.Pharmacy}}</td>
+                        <td>{{x.Labour_Room}}</td>
+                        <td>{{x.Blood_Bank}}</td>
+                        <td>{{x.Blood_Storage}}</td>
+                        <td>{{x.Organ_Bank}}</td>
+                        <td>{{x.Dialysis_Unit}}</td>
+                        <td>{{x.Operation_Theatre}}</td>
+                        <td>{{x.Physiotherapy}}</td>
+                        <td>{{x.MRI}}</td>
+                        <td>{{x.CT_Scan}}</td>
+                        <td>{{x.Diagnostics}}</td>
+                        <td>{{x.Occupational_Therapy}}</td>
+                        <td><a href="/deleteHospitalAccountByAdmin/{{x.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</a></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        {% endfor %}
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+
+</html>
