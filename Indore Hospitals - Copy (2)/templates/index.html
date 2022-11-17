@@ -42,7 +42,20 @@
          $(".bed_amb").hide();
          $('#back-to-home-mob').hide();
 
-       }z
+       }
+       $("#search-text").on("keyup", function() {
+         var value = $(this).val().toLowerCase();
+         $("#myTable span").filter(function() {
+           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+         });
+       });
+       $('.sortme').sort(function(a, b) {
+         if (a.textContent < b.textContent) {
+           return -1;
+         } else {
+           return 1;
+         }
+       }).appendTo('body');
      });
   </script>
 <style media="screen">
@@ -551,9 +564,11 @@ margin-left:55%;width:125px;height:35px;margin-top:5%"
 
            </div>
     </div>
+<div class="" id="page">
 
-    <div>
 
+
+    <span>
        <div class="card">
         <div class="card-header">
 
@@ -595,7 +610,7 @@ margin-left:55%;width:125px;height:35px;margin-top:5%"
             </div>
             <div class="form-row" style="margin-top:3%">
               <div class="form-flex">
-                
+
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4 form-flex">
                   <a href="/moreinfo/{{x.sno}}" style="margin-left:55%" type="button" class="btn btn-outline-dark">MORE INFO</button></a>
@@ -604,14 +619,16 @@ margin-left:55%;width:125px;height:35px;margin-top:5%"
             </div>
           </div>
         </div>
-      {% endfor %}
         </div>
         </div>
 
-    </div>
+</span>
+{% endfor %}
+
+</div>
     <nav class="navbar fixed-bottom navbar-dark" style="color:white;background:#182747;"id="type_of_hos_mob">
       <div class="col-sm-1">
-    
+
       </div>
       <div class="col-sm-3">
         <a href="#" class="menu_option ">GOVERMENT</a>
@@ -623,18 +640,18 @@ margin-left:55%;width:125px;height:35px;margin-top:5%"
         <a href="#" class="menu_option">VIEW_ALL</a>
       </div>
       <div class="col-sm-1">
-    
+
       </div>
     </nav>
   </body>
   <script>
     let button = document.getElementById('submit-form')
-    
+
     button.onclick = myfunction(e)
     {
       e.preventDefault()
       location.href = 'moreinfo.html'
     }
-   
+
   </script>
 </html>
