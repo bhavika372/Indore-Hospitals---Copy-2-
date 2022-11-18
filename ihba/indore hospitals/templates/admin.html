@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin-Hospital Info</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Change Password</title>
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/.css">
+    <link rel="shortcut icon" href="..\static\img\logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1367876d04.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<style media="screen">
+  body {
+  	background: linear-gradient(-45deg, #0071bc,#2e3192, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 9s ease infinite;
+	height: 100vh;
+}
+.scroll {
+    /* enable div scrolling */
+    overflow: scroll;
+    height: 500px;
+    background-color: white;
+    border: 1px black solid;
+    padding: 2%;
+    width: 1000px;
+    margin: 0 auto;
+    white-space: nowrap;
+    font-size: large;
+    margin-top: 3%;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#myInput").on("keyup", function() {
+  var value = $(this).val().toLowerCase();
+  $("#myTable tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  });
+});
+});
+</script>
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-light bg-light justify-content-between">
+
+
+      <div class="col-lg-4">
+        <a href="/login" style="text-decoration:none;font-weight:700;margin-left:5%;color:#494949;font-family: 'Rubik'"><i class="fa-regular fa-circle-left"></i>
+      BACK TO HOME</a>
+      </div>
+      <div class="nav-brand col-lg-4">
+        <a href="#" class="navbar-brand"><img style="width:7% ;margin-right:2%;margin-left:25%" src="..\static\img\logo.png"></a>
+        <a href="#" style=" text-decoration:none;font-size:20px;color:black; font-weight:700;  font-family: 'Rubik';
+        "><span style="margin-right:2%;color:#0071bc">ADMIN</span><span style="color:#2e3192">PANEL</span></a>
+      </div>
+      <div class="col-lg-3">
+        <input id="myInput" type="text" placeholder="Search for Hospital">
+
+      </div>
+      <div class="col-lg-1">
+
+      </div>
+    </nav>
+
+    <!--Login Info-->
+    <div class="scroll">
+
+    <div class="container my-3">
+        {% for x in obj %}
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th></th>
+                        <th scope="col">hospital_type</th>
+                        <th scope="col">hospital_name</th>
+                        <th scope="col">hospital_desc</th>
+                        <th scope="col">hospital_contact</th>
+                        <th scope="col">primary_email_id</th>
+                        <th scope="col">secondary_email_id</th>
+                        <th scope="col">hospital_state</th>
+                        <th scope="col">hospital_city</th>
+                        <th scope="col">hospital_address</th>
+                        <th scope="col">hospital_pincode</th>
+                        <th scope="col">hospital_registration_number</th>
+                        <th scope="col">nodal_person_name_and_designation</th>
+                        <th scope="col">nodal_person_telephone_number</th>
+                        <th scope="col">nodal_person_email_id</th>
+                        <th scope="col">total_general_beds</th>
+                        <th scope="col">available_general_beds</th>
+                        <th scope="col">total_oxygen_beds</th>
+                        <th scope="col">available_oxygen_beds</th>
+                        <th scope="col">total_icu_beds</th>
+                        <th scope="col">available_icu_beds</th>
+                        <th scope="col">total_icu_beds_with_ventilator</th>
+                        <th scope="col">available_icu_beds_with_ventilator</th>
+                        <th scope="col">total_ews_beds</th>
+                        <th scope="col">available_ews_beds</th>
+                        <th scope="col">total_private_wards</th>
+                        <th scope="col">available_private_wards</th>
+                        <th scope="col">login_passcode</th>
+                        <th scope="col">total_no_of_doctors</th>
+                        <th scope="col">number_of_ambulances</th>
+                        <th scope="col">blood_bank_number</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <tr>
+                      
+                    <td><a href="/deleteHospitalAccountByAdmin/{{x.sno}}" type="button" class="btn btn-outline-danger btn-sm mx-1">Delete</a></button>
+                    </td>
+                        <td>{{x.hospital_type}}</td>
+                        <td>{{x.hospital_name}}</td>
+                        <td>{{x.hospital_desc}}</td>
+                        <td>{{x.hospital_contact}}</td>
+                        <td>{{x.primary_email_id}}</td>
+                        <td>{{x.secondary_email_id}}</td>
+                        <td>{{x.hospital_state}}</td>
+                        <td>{{x.hospital_city}}</td>
+                        <td>{{x.hospital_address}}</td>
+                        <td>{{x.hospital_pincode}}</td>
+                        <td>{{x.hospital_registration_number}}</td>
+                        <td>{{x.nodal_person_name_and_designation}}</td>
+                        <td>{{x.nodal_person_telephone_number}}</td>
+                        <td>{{x.nodal_person_email_id}}</td>
+                        <td>{{x.total_general_beds}}</td>
+                        <td>{{x.available_general_beds}}</td>
+                        <td>{{x.total_oxygen_beds}}</td>
+                        <td>{{x.available_oxygen_beds}}</td>
+                        <td>{{x.total_icu_beds}}</td>
+                        <td>{{x.available_icu_beds}}</td>
+                        <td>{{x.total_icu_beds_with_ventilator}}</td>
+                        <td>{{x.available_icu_beds_with_ventilator}}</td>
+                        <td>{{x.total_ews_beds}}</td>
+                        <td>{{x.available_ews_beds}}</td>
+                        <td>{{x.total_private_wards}}</td>
+                        <td>{{x.available_private_wards}}</td>
+                        <td>{{x.login_passcode}}</td>
+                        <td>{{x.total_no_of_doctors}}</td>
+                        <td>{{x.number_of_ambulances}}</td>
+                        <td>{{x.blood_bank_number}}</td>
+                    </tr>
+                  
+                </tbody>
+            </table>
+        {% endfor %}
+    </div>
+
+
+  </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+
+</html>
