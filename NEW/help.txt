@@ -1,0 +1,16 @@
+Python download link : https://www.python.org/downloads/
+VScode install link : https://code.visualstudio.com/download
+First we need python and vs code installed in the system.
+Now we have to install virtual environment 'virtualenv' using the command 'pip install virtualenv'
+Now we will create virtual environment folder named env using 'virtualenv env'
+To activate this environment in powershell use the command .\env\Scripts\activate.ps1
+Now we have to install following modules in the same env.
+Flask-pip install flask
+Flask-sqlalchemy-pip install flask-sqlalchemy
+To create the database use the following command
+python
+from app import db
+db.create_all()
+exit()
+Now our environment is ready to run the application
+for this use the command python .\app.py
